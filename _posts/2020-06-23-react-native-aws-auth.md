@@ -4,20 +4,28 @@ date: 2020-06-23 18:02:28 -0400
 categories: react-native aws auth amplify
 ---
 
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+## Create a new React Native app
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+To get started, initialize a new React Native project.
 
-Jekyll also offers powerful support for code snippets:
-
-```python
-def print_hi(name):
-  print("hello", name)
-print_hi('Tom')
+```bash
+npm install -g expo-cli
+```
+```bash
+expo init -g authApp
 ```
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+## Install Amplify libraries
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]: https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+Next, install the local Amplify dependencies in this project folder.
+
+```bash
+npm install aws-amplify aws-amplify-react-native @react-native-community/netinfo
+```
+
+Next, open <b>App.js</b> and add the following lines of code at the top of the file below the last import : 
+
+```typescript
+import Amplify from 'aws-amplify'
+import config form './aws-config'
+```
